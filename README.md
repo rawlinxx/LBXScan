@@ -120,4 +120,4 @@ style.notRecoginitonArea = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
 # 界面效果
 
 (加载速度慢，可刷新网页)
-
+等完善添加gif图片
