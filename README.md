@@ -1,6 +1,6 @@
 
 
-# ios 二维码、条形码 objective-c 版本
+# iOS 二维码、条形码 objective-c 版本
 ### iOS扫码封装
 - 扫码识别封装: 系统API(AVFoundation)、ZXing、ZBar
 - 扫码界面效果封装
@@ -21,29 +21,29 @@
 - 微信扫码框效果
 
 ### cocoapods安装
-> 可独立安装某一块功能
+> 可独立安装某一功能,ZXing已经下载到本工程，解决之前版本下载速度慢的问题
 
 #### 根据tag安装
 ***
-- 安装所有库包括UI  
+- 安装所有库包括UI  (最低系统iOS7)
 
 ```ruby
 pod 'LBXScan/All',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
-- 只安装系统原生API封装库  
+- 只安装系统原生API封装库  (最低系统iOS7)
 
 ```ruby
 pod 'LBXScan/LBXNative', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
-- 只安装ZXing封装库  
+- 只安装ZXing封装库  (最低系统iOS6)
 
 ```ruby
 pod 'LBXScan/LBXZXing', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
-- 只安装ZBar封装库  
+- 只安装ZBar封装库  (最低系统iOS6)
 
 ```ruby
 pod 'LBXScan/LBXZBar',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
@@ -118,6 +118,4 @@ style.notRecoginitonArea = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
 
 
 # 界面效果
-
-(加载速度慢，可刷新网页)
 等完善添加gif图片
