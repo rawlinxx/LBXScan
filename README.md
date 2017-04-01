@@ -34,13 +34,13 @@ pod 'LBXScan/All',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 - 只安装系统原生API封装库  (最低系统iOS7)
 
 ```ruby
-pod 'LBXScan/LBXNative', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+pod 'LBXScan/LBXNative',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
 - 只安装ZXing封装库  (最低系统iOS6)
 
 ```ruby
-pod 'LBXScan/LBXZXing', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+pod 'LBXScan/LBXZXing',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
 - 只安装ZBar封装库  (最低系统iOS6)
@@ -52,7 +52,7 @@ pod 'LBXScan/LBXZBar',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 - 只安装UI
 
 ```ruby
-pod 'LBXScan/UI', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+pod 'LBXScan/UI',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 - 安装任意组合
 
