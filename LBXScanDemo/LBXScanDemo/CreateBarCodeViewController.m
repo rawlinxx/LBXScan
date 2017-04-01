@@ -37,21 +37,26 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self showSetttingButton];
+}
+
+- (void)showSetttingButton
+{
+    //选择码扫码类型的按钮
+    //把右侧的两个按钮添加到rightBarButtonItem
+    UIButton *rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+    [rightBtn setTitle:@"切换" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(newCodeChooose) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightCunstomButtonView = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightCunstomButtonView;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(50, self.view.frame.size.height - 60, self.view.frame.size.width-100, 40)];
-    [btn1 setTitle:@"切换码的样式及类型" forState:UIControlStateNormal];
-    [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(newCodeChooose) forControlEvents:UIControlEventTouchUpInside];
-    
-    btn1.backgroundColor = [UIColor lightGrayColor];
-    
-    [self.view addSubview:btn1];
-    
     
     //二维码
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake( (CGRectGetWidth(self.view.frame)-CGRectGetWidth(self.view.frame)*5/6)/2, 100, CGRectGetWidth(self.view.frame)*5/6, CGRectGetWidth(self.view.frame)*5/6)];

@@ -1,32 +1,13 @@
 
 
-# ios 二维码、条形码 objective-c 版本 2.0
-* native(AVFoundation)
-* ZXing
-* ZBar
-
-> 可分开独立安装使用，ZXing代码已经放到本工程，提升安装速度
-
-### cocoapods安装
-#### 根据tag安装
-***
-- 安装所有库包括UI  
-
 # ios 二维码、条形码 objective-c 版本
-
-## 介绍
-**iOS扫码封装 objective-c版本 封装ios系统API和ZXing**
+### iOS扫码封装
+- 扫码识别封装: 系统API(AVFoundation)、ZXing、ZBar
 - 扫码界面效果封装
 - 二维码、条形码
 - 相册获取图片后识别
 
-**模仿其他app**
-- 模仿QQ扫码界面
-- 支付宝扫码框效果
-- 微信扫码框效果
-
-**其他设置参数自定义效果**
-
+### 设置参数自定义效果
 - 扫码框周围区域背景色可设置
 - 扫码框颜色可也设置
 - 扫码框4个角的颜色可设置、大小可设置
@@ -34,37 +15,67 @@
 - 可设置扫码成功后，获取当前图片
 - 动画效果选择:  线条上下移动、网格形式移动、中间线条不移动(一般扫码条形码的效果)
 
+### 模仿其他app(通过设置参数即可完成)
+- 模仿QQ扫码界面
+- 支付宝扫码框效果
+- 微信扫码框效果
 
-# 安装
+### cocoapods安装
+> 可独立安装某一块功能
 
-### Installation with CocoaPods
+#### 根据tag安装
+***
+- 安装所有库包括UI  
 
 ```ruby
-
+pod 'LBXScan/All',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
+
+- 只安装系统原生API封装库  
+
+```ruby
+pod 'LBXScan/LBXNative', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+```
+
+- 只安装ZXing封装库  
+
+```ruby
+pod 'LBXScan/LBXZXing', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+```
+
+- 只安装ZBar封装库  
+
+```ruby
+pod 'LBXScan/LBXZBar',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+```
+
+- 只安装UI
+
+```ruby
+pod 'LBXScan/UI', ,git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
+```
+- 安装任意组合
+
+> 你可以通过上面的安装方式，安装任意组合
 
 ### 手动安装 
 下载后将LBXScan文件夹copy到工程中
-添加预编译 pch文件 （如何添加请百度）
+对于ZXing添加预编译 pch文件 （如何添加请百度）
 并在其中添加
-```objective-c
+
+```ruby
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 ```
-否则编译会报许多错误
 
-另外需要将ZXing代码copy到工程中:[ZXing代码下载地址](https://github.com/TheLevelUp/ZXingObjC)
+否则编译会报许多错误
 
 ### Demo测试
 - xcode版本:xcode8.3
 - 将工程下载下来，打开DemoTests中 LBXScanDemo.xcworkspace
+- Demo提供了选择对应库进行扫码识别、相册选择图片识别、生成条码等测试
 
 ### 使用
-
-- LBXScanViewStyle:设置界面参数,具体各个参数请参看代码头文件
-- LBXScanViewController:扫码界面基类控制器，实现基本的扫码功能、相册功能、闪光灯开启关闭、扫码框相关效果，其他提示语及界面请继承LBXScanViewController后添加
-
-
 #### 自定义参数部分介绍
 ```obj-c
 - (void)custom
