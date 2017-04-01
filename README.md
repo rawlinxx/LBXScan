@@ -43,7 +43,7 @@ pod 'LBXScan/LBXNative',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 pod 'LBXScan/LBXZXing',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
-- 只安装ZBar封装库  (最低系统iOS6)
+- 只安装ZBar封装库  (最低系统iOS6,使用的libzbar64.a,不支持bitcode)
 
 ```ruby
 pod 'LBXScan/LBXZBar',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
