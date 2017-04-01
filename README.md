@@ -1,11 +1,18 @@
 
 
+# ios 二维码、条形码 objective-c 版本 2.0
+* native(AVFoundation)
+* ZXing
+* ZBar
+
+> 可分开独立安装使用，ZXing代码已经放到本工程，提升安装速度
+
+### cocoapods安装
+#### 根据tag安装
+***
+- 安装所有库包括UI  
 
 # ios 二维码、条形码 objective-c 版本
-
-#### Swift Version <img src="https://github.com/MxABC/LBXScan/blob/master/DemoTests/swiftIcon.png" height="25" width="25">
-对应的swift版本请看 : **[swiftScan](https://github.com/MxABC/swiftScan)**
-
 
 ## 介绍
 **iOS扫码封装 objective-c版本 封装ios系统API和ZXing**
@@ -26,18 +33,14 @@
 - 可设置只识别扫码框内的图像区域
 - 可设置扫码成功后，获取当前图片
 - 动画效果选择:  线条上下移动、网格形式移动、中间线条不移动(一般扫码条形码的效果)
-- 如果好用请帮忙右上角 star 支持一下
+
 
 # 安装
 
 ### Installation with CocoaPods
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '6.0'
-pod 'LBXScan','~> 1.1.1'
-# 获取最新版本,采用下面的方式
-#pod 'LBXScan',git:'https://github.com/MxABC/LBXScan.git'
+
 ```
 
 ### 手动安装 
@@ -53,7 +56,7 @@ pod 'LBXScan','~> 1.1.1'
 另外需要将ZXing代码copy到工程中:[ZXing代码下载地址](https://github.com/TheLevelUp/ZXingObjC)
 
 ### Demo测试
-- xcode版本:xcode7.1
+- xcode版本:xcode8.3
 - 将工程下载下来，打开DemoTests中 LBXScanDemo.xcworkspace
 
 ### 使用
@@ -61,47 +64,8 @@ pod 'LBXScan','~> 1.1.1'
 - LBXScanViewStyle:设置界面参数,具体各个参数请参看代码头文件
 - LBXScanViewController:扫码界面基类控制器，实现基本的扫码功能、相册功能、闪光灯开启关闭、扫码框相关效果，其他提示语及界面请继承LBXScanViewController后添加
 
-####模仿qq界面效果
-```obj-c
-- (void)qqStyle
-{
-//设置扫码区域参数设置
 
-//创建参数对象
-LBXScanViewStyle *style = [[LBXScanViewStyle alloc]init];
-
-//矩形区域中心上移，默认中心点为屏幕中心点
-style.centerUpOffset = 44;
-
-//扫码框周围4个角的类型,设置为外挂式
-style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle_Outer;
-
-//扫码框周围4个角绘制的线条宽度
-style.photoframeLineW = 6;
-
-//扫码框周围4个角的宽度
-style.photoframeAngleW = 24;
-
-//扫码框周围4个角的高度
-style.photoframeAngleH = 24;
-
-//扫码框内 动画类型 --线条上下移动
-style.anmiationStyle = LBXScanViewAnimationStyle_LineMove;
-
-//线条上下移动图片
-style.animationImage = [UIImage imageNamed:@"CodeScan.bundle/qrcode_scan_light_green"];
-
-//SubLBXScanViewController继承自LBXScanViewController
-//添加一些扫码或相册结果处理
-SubLBXScanViewController *vc = [SubLBXScanViewController new];
-vc.style = style;   
-
-vc.isQQSimulator = YES;
-[self.navigationController pushViewController:vc animated:YES];
-}
-```
-
-####自定义参数部分介绍
+#### 自定义参数部分介绍
 ```obj-c
 - (void)custom
 {
@@ -136,17 +100,7 @@ style.colorAngle = [UIColor colorWithRed:65./255. green:174./255. blue:57./255. 
 style.colorRetangleLine = [UIColor colorWithRed:247/255. green:202./255. blue:15./255. alpha:1.0];
 
 //非矩形框区域颜色
-style.red_notRecoginitonArea = 247./255.;
-style.green_notRecoginitonArea = 202./255;
-style.blue_notRecoginitonArea = 15./255;
-style.alpa_notRecoginitonArea = 0.2;
-
-SubLBXScanViewController *vc = [SubLBXScanViewController new];
-vc.style = style;
-
-//开启只识别矩形框内图像功能
-vc.isOpenInterestRect = YES;
-[self.navigationController pushViewController:vc animated:YES];
+style.notRecoginitonArea = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
 
 }
 ```
@@ -155,17 +109,4 @@ vc.isOpenInterestRect = YES;
 # 界面效果
 
 (加载速度慢，可刷新网页)
-
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page1.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page2.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page3.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page11.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page4.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page5.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page6.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page7.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page8.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page9.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page12.png)
-![image](https://github.com/MxABC/LBXScan/blob/master/ScreenShots/page10.png)
 
