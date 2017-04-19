@@ -107,4 +107,5 @@ style.notRecoginitonArea = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
 
 
 # 界面效果
-等完善添加gif图片
+![image](https://github.com/MxABC/Resource/blob/master/scan12.gif)
+

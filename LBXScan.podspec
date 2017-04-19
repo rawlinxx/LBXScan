@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'LBXScan'
-    s.version      = '2.0.0'
+    s.version      = '2.0'
     s.summary      = 'ios scan wrapper'
     s.homepage     = 'https://github.com/MxABC/LBXScan'
     s.license      = 'MIT'
@@ -43,9 +43,7 @@ Pod::Spec.new do |s|
   
     s.subspec 'UI' do |ui|
       ui.source_files = 'LBXScan/UI/*.{h,m}'
-      ui.resource_bundles = {
-     'UI' => ['LBXScan/UI/CodeScan.bundle/*.png']
-      }
+      ui.resource     = 'LBXScan/UI/CodeScan.bundle'
     end
 
 end

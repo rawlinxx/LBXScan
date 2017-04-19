@@ -77,14 +77,14 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/LBXScan/UI.bundle"
+  install_resource "../../LBXScan/UI/CodeScan.bundle"
   install_resource "ZBarSDK/iphone/res/zbar-back.png"
   install_resource "ZBarSDK/iphone/res/zbar-help.html"
   install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
   install_resource "ZBarSDK/iphone/res/zbar-samples.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/LBXScan/UI.bundle"
+  install_resource "../../LBXScan/UI/CodeScan.bundle"
   install_resource "ZBarSDK/iphone/res/zbar-back.png"
   install_resource "ZBarSDK/iphone/res/zbar-help.html"
   install_resource "ZBarSDK/iphone/res/zbar-helpicons.png"
