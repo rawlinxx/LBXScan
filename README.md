@@ -20,10 +20,10 @@
 - 支付宝扫码框效果
 - 微信扫码框效果
 
-### cocoapods安装
+### install with cocoapods
 > 可独立安装某一功能,ZXing已经下载到本工程，解决之前版本下载速度慢的问题
 
-#### 根据tag安装
+#### install with cocoapods by git tag
 ***
 - 安装所有库包括UI  (最低系统iOS7)
 
@@ -43,7 +43,7 @@ pod 'LBXScan/LBXNative',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 pod 'LBXScan/LBXZXing',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 ```
 
-- 只安装ZBar封装库  (最低系统iOS6,使用的libzbar64.a,不支持bitcode)
+- 只安装ZBar封装库 
 
 ```ruby
 pod 'LBXScan/LBXZBar',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
@@ -58,17 +58,6 @@ pod 'LBXScan/UI',git:'https://github.com/MxABC/LBXScan.git', tag: '2.0'
 
 > 你可以通过上面的安装方式，安装任意组合
 
-### 手动安装 
-下载后将LBXScan文件夹copy到工程中
-对于ZXing添加预编译 pch文件 （如何添加请百度）
-并在其中添加
-
-```ruby
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-```
-
-否则编译会报许多错误
 
 ### Demo测试
 - xcode版本:xcode8.3
