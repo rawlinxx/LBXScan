@@ -14,6 +14,8 @@
 #import "Global.h"
 #import "SettingViewController.h"
 
+//#import <LBXScanViewStyle.h>
+
 #import "LBXScanViewStyle.h"
 #import "LBXScanViewController.h"
 #import "QQLBXScanViewController.h"

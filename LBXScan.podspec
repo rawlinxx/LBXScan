@@ -35,9 +35,9 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'LBXZBar' do |lbxZBar|
-       lbxZBar.source_files = 'LBXScan/LBXZBar/*.{h,m}', 'LBXScan/LBXZBar/ZBarSDK/Headers/ZBarSDK/*.{h,m}', 'LBXScan/LBXZBar/ZBarSDK/Headers/ZBarSDK/zbar/*.h'
-       lbxZBar.vendored_library = "LBXScan/LBXZBar/ZBarSDK/libzbar64.a"
+       lbxZBar.source_files = 'LBXScan/LBXZBar/*.{h,m}'
        lbxZBar.libraries = 'iconv','z'
+       lbxZBar.dependency 'ZBarSDK', '~> 1.3.1'
        lbxZBar.ios.frameworks = 'AVFoundation', 'CoreGraphics', 'CoreMedia'
     end
   
