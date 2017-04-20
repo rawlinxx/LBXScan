@@ -10,37 +10,38 @@
 #import "LBXScanView.h"
 
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface LBXScanView()
 
 //扫码区域各种参数
-@property (nonatomic, strong) LBXScanViewStyle* viewStyle;
+@property (nonatomic, strong,nullable) LBXScanViewStyle* viewStyle;
 
 
 //扫码区域
 @property (nonatomic,assign)CGRect scanRetangleRect;
 
 //线条扫码动画封装
-@property (nonatomic,strong)LBXScanLineAnimation *scanLineAnimation;
+@property (nonatomic,strong,nullable)LBXScanLineAnimation *scanLineAnimation;
 //网格扫码动画封装
-@property (nonatomic,strong)LBXScanNetAnimation *scanNetAnimation;
+@property (nonatomic,strong,nullable)LBXScanNetAnimation *scanNetAnimation;
 
 //线条在中间位置，不移动
-@property (nonatomic,strong)UIImageView *scanLineStill;
+@property (nonatomic,strong,nullable)UIImageView *scanLineStill;
 
 /**
  @brief  启动相机时 菊花等待
  */
-@property(nonatomic,strong)UIActivityIndicatorView* activityView;
+@property(nonatomic,strong,nullable)UIActivityIndicatorView* activityView;
 
 /**
  @brief  启动相机中的提示文字
  */
-@property(nonatomic,strong)UILabel *labelReadying;
-
-
+@property(nonatomic,strong,nullable)UILabel *labelReadying;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 @implementation LBXScanView
 

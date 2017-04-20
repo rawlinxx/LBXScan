@@ -1,11 +1,10 @@
 
 
-# iOS 二维码、条形码 objective-c 版本
-### iOS扫码封装
-- 扫码识别封装: 系统API(AVFoundation)、ZXing、ZBar
-- 扫码界面效果封装
-- 二维码、条形码
-- 相册获取图片后识别
+# iOS barcode and qr code objective-c version
+### iOS scanner wrapper
+- scanner wrapper with: AVFoundation、ZXing、ZBar
+- scan view wrapper
+- recognize image
 
 ### 设置参数自定义效果
 - 扫码框周围区域背景色可设置
@@ -15,10 +14,7 @@
 - 可设置扫码成功后，获取当前图片
 - 动画效果选择:  线条上下移动、网格形式移动、中间线条不移动(一般扫码条形码的效果)
 
-### 模仿其他app(通过设置参数即可完成)
-- 模仿QQ扫码界面
-- 支付宝扫码框效果
-- 微信扫码框效果
+
 
 ### install with cocoapods
 > 可独立安装某一功能,ZXing已经下载到本工程，解决之前版本下载速度慢的问题
