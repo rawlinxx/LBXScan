@@ -11,7 +11,7 @@
 
 #import "ZXBarcodeFormat.h"
 
-#define LBXScan_Define_ZXing
+//#define LBXScan_Define_ZXing
 
 /*!
  *  ZXing扫码封装

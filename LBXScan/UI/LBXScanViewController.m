@@ -58,9 +58,9 @@
             
         }else{
             
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
             [_qRScanView stopDeviceReadying];
-#endif
+//#endif
             
             [self showError:@"   请到设置隐私中开启本程序相机权限   "];
         }
@@ -72,7 +72,7 @@
 //绘制扫描区域
 - (void)drawScanView
 {
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
     
     if (!_qRScanView)
     {
@@ -84,7 +84,7 @@
         [self.view addSubview:_qRScanView];
     }
     [_qRScanView startDeviceReadyingWithText:_cameraInvokeMsg];
-#endif
+//#endif
 }
 
 - (void)reStartDevice
@@ -92,23 +92,23 @@
     switch (_libraryType) {
         case SLT_Native:
         {
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
             [_scanObj startScan];
-#endif
+//#endif
         }
             break;
         case SLT_ZXing:
         {
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
             [_zxingObj start];
-#endif
+//#endif
         }
             break;
         case SLT_ZBar:
         {
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
             [_zbarObj start];
-#endif
+//#endif
         }
             break;
         default:
@@ -138,7 +138,7 @@
         {
 
             
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
             
             if (!_scanObj )
             {
@@ -164,14 +164,14 @@
                 [_scanObj setNeedCaptureImage:_isNeedScanImage];
             }
             [_scanObj startScan];
-#endif
+//#endif
 
         }
             break;
         case SLT_ZXing:
         {
 
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
             if (!_zxingObj) {
                 
                 self.zxingObj = [[ZXingWrapper alloc]initWithPreView:videoView block:^(ZXBarcodeFormat barcodeFormat, NSString *str, UIImage *scanImg) {
@@ -194,12 +194,12 @@
                 }               
             }
             [_zxingObj start];
-#endif
+//#endif
         }
             break;
         case SLT_ZBar:
         {
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
             if (!_zbarObj) {
                 
                 self.zbarObj = [[LBXZBarWrapper alloc]initWithPreView:videoView barCodeType:[self zbarTypeWithScanType:_scanCodeType] block:^(NSArray<LBXZbarResult *> *result) {
@@ -216,22 +216,22 @@
                 }];
             }
             [_zbarObj start];
-#endif
+//#endif
         }
             break;
         default:
             break;
     }
     
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
     [_qRScanView stopDeviceReadying];
     [_qRScanView startScanAnimation];
-#endif
+//#endif
     
     self.view.backgroundColor = [UIColor clearColor];
 }
 
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
 - (zbar_symbol_type_t)zbarTypeWithScanType:(SCANCODETYPE)type
 {
     //test only ZBAR_I25 effective,why
@@ -257,7 +257,7 @@
 //    
 //    return (zbar_symbol_type_t)type;
 }
-#endif
+//#endif
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -267,9 +267,9 @@
  
     [self stopScan];
     
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
     [_qRScanView stopScanAnimation];
-#endif
+//#endif
 }
 
 - (void)stopScan
@@ -277,23 +277,23 @@
     switch (_libraryType) {
         case SLT_Native:
         {
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
             [_scanObj stopScan];
-#endif
+//#endif
         }
             break;
         case SLT_ZXing:
         {
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
             [_zxingObj stop];
-#endif
+//#endif
         }
             break;
         case SLT_ZBar:
         {
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
             [_zbarObj stop];
-#endif
+//#endif
         }
             break;
         default:
@@ -323,23 +323,23 @@
     switch (_libraryType) {
         case SLT_Native:
         {
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
             [_scanObj changeTorch];
-#endif
+//#endif
         }
             break;
         case SLT_ZXing:
         {
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
             [_zxingObj openOrCloseTorch];
-#endif
+//#endif
         }
             break;
         case SLT_ZBar:
         {
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
             [_zbarObj openOrCloseFlash];
-#endif
+//#endif
         }
             break;
         default:
@@ -388,7 +388,7 @@
     switch (_libraryType) {
         case SLT_Native:
         {
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
             if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0)
             {
                 [LBXScanNative recognizeImage:image success:^(NSArray<LBXScanResult *> *array) {
@@ -399,12 +399,12 @@
             {
                 [self showError:@"native低于ios8.0系统不支持识别图片条码"];
             }
-#endif
+//#endif
         }
             break;
         case SLT_ZXing:
         {
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
             
             [ZXingWrapper recognizeImage:image block:^(ZXBarcodeFormat barcodeFormat, NSString *str) {
                 
@@ -415,13 +415,13 @@
                 
                 [weakSelf scanResultWithArray:@[result]];
             }];
-#endif
+//#endif
             
         }
             break;
         case SLT_ZBar:
         {
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
             [LBXZBarWrapper recognizeImage:image block:^(NSArray<LBXZbarResult *> *result) {
                 
                 //测试，只使用扫码结果第一项
@@ -435,7 +435,7 @@
                 [weakSelf scanResultWithArray:@[scanResult]];
                 
             }];
-#endif
+//#endif
             
         }
             break;
@@ -452,7 +452,7 @@
 }
 
 
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
 - (NSString*)convertZXBarcodeFormat:(ZXBarcodeFormat)barCodeFormat
 {
     NSString *strAVMetadataObjectType = nil;
@@ -504,7 +504,7 @@
     
     return strAVMetadataObjectType;
 }
-#endif
+//#endif
 
 
 - (NSString*)nativeCodeWithType:(SCANCODETYPE)type

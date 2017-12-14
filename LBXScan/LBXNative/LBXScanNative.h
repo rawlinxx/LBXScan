@@ -12,7 +12,7 @@
 @import AVFoundation;
 
 #import "LBXScanTypes.h"
-#define LBXScan_Define_Native
+
 
 
 

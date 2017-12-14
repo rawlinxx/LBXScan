@@ -11,23 +11,23 @@
 #import "LBXScanTypes.h"
 
 //UI
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
 #import "LBXScanView.h"
-#endif
+//#endif
 
 
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
 #import "LBXScanNative.h" //原生扫码封装
-#endif
+//#endif
 
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
 #import "ZXingWrapper.h" //ZXing扫码封装
-#endif
+//#endif
 
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
 #import "ZBarSDK.h"
 #import "LBXZBarWrapper.h"//ZBar扫码封装
-#endif
+//#endif
 
 
 typedef NS_ENUM(NSInteger, SCANLIBRARYTYPE) {
@@ -97,51 +97,51 @@ typedef NS_ENUM(NSInteger, SCANCODETYPE) {
 /**
  *  界面效果参数
  */
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
 @property (nonatomic, strong) LBXScanViewStyle *style;
-#endif
+//#endif
 
 
 
 #pragma mark -----  扫码使用的库对象 -------
 
-#ifdef LBXScan_Define_Native
+//#ifdef LBXScan_Define_Native
 /**
  @brief  扫码功能封装对象
  */
 @property (nonatomic,strong) LBXScanNative* scanObj;
 
-#endif
+//#endif
 
 
-#ifdef LBXScan_Define_ZXing
+//#ifdef LBXScan_Define_ZXing
 /**
  ZXing扫码对象
  */
 @property (nonatomic, strong) ZXingWrapper *zxingObj;
-#endif
+//#endif
 
 
 
-#ifdef LBXScan_Define_ZBar
+//#ifdef LBXScan_Define_ZBar
 /**
  ZBar扫码对象
  */
 @property (nonatomic, strong) LBXZBarWrapper *zbarObj;
 
-#endif
+//#endif
 
 
 
 
-#pragma mark - 扫码界面效果及提示等
+//#pragma mark - 扫码界面效果及提示等
 /**
  @brief  扫码区域视图,二维码一般都是框
  */
 
-#ifdef LBXScan_Define_UI
+//#ifdef LBXScan_Define_UI
 @property (nonatomic,strong) LBXScanView* qRScanView;
-#endif
+//#endif
 
 
 
